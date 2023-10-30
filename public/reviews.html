@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>About the Chef</title>
+    <div class="header">
+      <img src="/imges/chef3.jpeg" alt="a picture of chef">
+      <img src="/imges/ggb.jpeg" alt="a picture of ggb">
+      <img src="/imges/chef1.jpeg" alt="a picture of chef">
+
+    </div>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./index.html" class="a-link">Back to Home Page</a>
+      </nav>
+    </header>
+    <br>
+    <h1>Please Give us Your Feedback:</h1>
+    <div class="container">
+      <div id="main-div">
+        <div id="my-div">
+          <form type="Submit" id="review-form">
+            <label for="first-name">First Name:</label>
+            <input
+              type="text"
+              id="first-name"
+              placeholder="Enter your first name" required
+            />
+            <label for="last-name">Last Name:</label>
+            <input
+              type="text"
+              id="last-name"
+              placeholder="Enter your last name" required
+            />
+            <label for="date">Date:</label>
+            <input type="date" id="date" required />
+            <label for="my-review">Comments:</label>
+            <textarea
+              name=""
+              id="my-review"
+              placeholder="Describe Your Experience:"
+              cols="60"
+              rows="10" required
+            ></textarea>
+            <button type="submit" id="review-btn">Review</button>
+          </form>
+        </div>
+      </div>
+      <h2>Customer Reviews:</h2>
+      <div class="container">
+        <div class="appt-container" id="review-container">
+          
+      </div>
+    </div>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="./reviews.js"></script>
+  </body>
+
+</html>

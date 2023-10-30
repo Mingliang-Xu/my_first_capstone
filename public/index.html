@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Golden Gate Cookie Co.</title>
+    <img src="/imges/ggb.jpeg" class="header-img" alt="a golden gate picture" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-div"><a href="./index.html" class="a-link">Welcome to Our Chocolate Cookie 🍪 Workshop</a>
+        <a href="./reviews.html" class="a-link">About the Chef 🧑🏼‍🍳</a>
+      </div>
+      </nav>
+    </header>
+    <br>
+    <h1>Book your experience now:</h1>  
+    <br>
+    <div id="my-div">
+      <form type="Submit" id="appt-form">
+        <label for="first-name">First Name:</label>
+        <input
+          type="text"
+          id="first-name"
+          placeholder="Enter your first name"
+        />
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" placeholder="Enter your last name" />
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date" />
+        <label for="number">Number of People: </label>
+        <input type="number" id="number" value="0" min="1" max="6" required />
+        <button type="submit" id="submit-btn">Reverse Your Seat</button>
+      </form>
+      <br>
+      <button id="all-appt-btn">View All Appointments</button>
+    </div>
+
+    <br />
+    <div class="appt-container" id="appt-container">
+      
+      </div>
+    </div>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

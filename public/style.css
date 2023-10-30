@@ -1,0 +1,136 @@
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.header {
+  display: inline-flex;
+  height: 206px;
+}
+.header-img {
+  display: inline;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: bolder;
+}
+a:visited {
+  color: black;
+}
+body {
+  background-image: url("/imges/cookie.webp");
+  background-color: goldenrod;
+}
+label {
+  font-weight: bold;
+}
+
+.container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+#my-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  border-color: darkorange;
+  border-width: 1px;
+  border-style: solid;
+  background-color: lightgoldenrodyellow;
+  text-align: center;
+}
+button {
+  height: 35px;
+  width: 150px;
+  background-color: darkorange;
+  border-radius: 10px;
+  border-color: darkorange;
+  border-width: 1px;
+  border-style: solid;
+  font-weight: bold;
+}
+button:hover {
+  background-color: lightgoldenrodyellow;
+}
+
+.appt-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: chocolate;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.appt-card {
+  display: inline-block;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 80px;
+  background-color: lightgoldenrodyellow;
+  border-radius: 10px;
+  border-color: darkorange;
+  border-width: 1px;
+  border-style: solid;
+  margin: 5px;
+  align-items: center;
+}
+.appt-card:hover {
+  background-color: darkorange;
+}
+.appt-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.del-btn {
+  background-color: darkorange;
+  height: 30px;
+  width: 30px;
+  border: 10px;
+  border-radius: 10px;
+}
+.del-btn:hover {
+  background-color: lightgoldenrodyellow;
+}
+#review-form {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 5px;
+  margin: 10px;
+}
+#review-btn {
+  float: left;
+  margin: 10px;
+}
+textarea {
+  background-color: lightgoldenrodyellow;
+  border-radius: 10px;
+  border-color: darkorange;
+  border-width: 1px;
+  border-style: solid;
+  justify-content: space-between;
+  text-align: left;
+}
