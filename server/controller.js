@@ -7,9 +7,9 @@ module.exports = {
     capstonedb
       .query(
         `
-    INSERT INTO reviews(first_name, last_name, date, description)
-    VALUES('${first_name}', '${last_name}', '${date}','${description}')
-    RETURNING *;
+      INSERT INTO reviews(first_name, last_name, date, description)
+      VALUES('${first_name}', '${last_name}', '${date}','${description}')
+      RETURNING *;
     `
       )
       .then((dbRes) => {
@@ -21,7 +21,8 @@ module.exports = {
     capstonedb
       .query(
         `SELECT * FROM reviews
-         ORDER BY DATE DESC;`
+         ORDER BY DATE DESC;
+         `
       )
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);
@@ -29,14 +30,16 @@ module.exports = {
   },
   deleteReview: (req, res) => {
     const { id } = req.params;
-
     capstonedb
       .query(
-        `
-    DELETE FROM reviews
-    WHERE id = ${id};
-    SELECT * FROM reviews
-    ORDER BY DATE DESC;`
+        `WITH deleted_row AS (
+        DELETE FROM reviews
+        WHERE id = ${id}
+        RETURNING *)
+          SELECT TO_CHAR(date, 'YYYY-MM-DD') AS formatted_date, * FROM reviews
+          WHERE id <> ${id}
+          ORDER BY date DESC;
+          `
       )
       .then((dbRes) => {
         res.status(200).send(dbRes[0]);
@@ -48,9 +51,9 @@ module.exports = {
     capstonedb
       .query(
         `
-    INSERT INTO appointments(first_name, last_name, date, number_of_people)
-    VALUES('${first_name}','${last_name}','${date}','${number_of_people}')
-    RETURNING *;
+        INSERT INTO appointments(first_name, last_name, date, number_of_people)
+        VALUES('${first_name}','${last_name}','${date}','${number_of_people}')
+        RETURNING *;
         `
       )
       .then((dbRes) => {
@@ -61,9 +64,9 @@ module.exports = {
     capstonedb
       .query(
         `
-    SELECT * FROM appointments
-    ORDER BY DATE DESC;
-    `
+      SELECT * FROM appointments
+      ORDER BY DATE DESC;
+      `
       )
       .then((dbRes) => {
         console.log(dbRes[0]);
@@ -71,21 +74,25 @@ module.exports = {
         res.status(200).send(dbRes[0]);
       });
   },
-
   deleteAppt: (req, res) => {
     const { id } = req.params;
 
     capstonedb
       .query(
         `
-    DELETE FROM appointments
-    WHERE id = ${id};
-    SELECT * FROM appointments
-    ORDER BY DATE DESC; `
+      SELECT * FROM appointments
+      WHERE id != ${id}
+      ORDER BY DATE DESC;
+      DELETE FROM appointments
+      WHERE id = ${id};
+    `
       )
       .then((dbRes) => {
         console.log(dbRes[0]);
         res.status(200).send(dbRes[0]);
+      })
+      .catch((err) => {
+        console.error(err);
       });
   },
 };

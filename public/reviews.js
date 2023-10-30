@@ -49,9 +49,13 @@ const addReview = (event) => {
       console.log(res.data);
       res.data.forEach(createCard);
       alert(`Hi ${firstName.value}, thanks for your feedback!`);
+      firstName.value = "";
+      lastName.value = "";
+      reviewDate.value = "";
+      reviewDesc.value = "";
     })
     .catch((err) => {
-      console.log(err);
+      console.log(`review submission failed: ${err}`);
     });
 };
 reviewForm.addEventListener("submit", addReview);

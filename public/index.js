@@ -50,6 +50,10 @@ const addAppt = (event) => {
       console.log(res.data);
       res.data.forEach(createCard);
       alert(`Hi ${firstName.value}, thanks for choosing us!`);
+      firstName.value = "";
+      lastName.value = "";
+      apptDate.value = "";
+      numberOfPeople.value = "";
     })
     .catch((err) => {
       console.log(err);
